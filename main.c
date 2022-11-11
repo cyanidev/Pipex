@@ -20,7 +20,11 @@ static void	execute(char **argv, int n, char **envp)
 	cmd_path = path(argv[n], envp);
 	cmd_options = options(argv[n]);
 	if (cmd_path == NULL)
+	{
+		free(cmd_path);
+		free(cmd_options);
 		ret_error (argv[n]);
+	}
 	execve(cmd_path, cmd_options, envp);
 }
 
@@ -83,6 +87,6 @@ int	main(int argc, char **argv, char **envp)
 		else if (pid > 0)
 			closefd(fd);
 	}
-	waitstatus(&status);
+	waitpid(pid, status, 0);
 	return (WEXITSTATUS(status));
 }

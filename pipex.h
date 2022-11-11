@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 19:10:44 by afelicia          #+#    #+#             */
-/*   Updated: 2022/11/10 14:03:45 by marvin           ###   ########.fr       */
+/*   Updated: 2022/11/11 12:47:03 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,5 +35,6 @@ char	**options(char *cmd);
 char	**ft_split_options(char const *s);
 void	check_args(int argc, char **argv, char **envp);
 int		main(int argc, char **argv, char **envp);
+void	closefd(int *fd);
 
 #endif

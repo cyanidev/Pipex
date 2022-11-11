@@ -27,9 +27,3 @@ void	closefd(int *fd)
 	close(fd[0]);
 	close(fd[1]);
 }
-
-void	waitstatus(int status)
-{
-	wait(&status);
-	wait(&status);
-}

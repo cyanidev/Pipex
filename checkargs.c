@@ -21,3 +21,15 @@ void	check_args(int argc, char **argv, char **envp)
 	if (!envp || envp[0][0] == '\0')
 		ret_error("envp invalid");
 }
+
+void	closefd(int *fd)
+{
+	close(fd[0]);
+	close(fd[1]);
+}
+
+void	waitstatus(int status)
+{
+	wait(&status);
+	wait(&status);
+}

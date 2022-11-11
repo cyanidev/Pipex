@@ -6,7 +6,7 @@
 #    By: marvin <marvin@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/27 16:57:15 by afelicia          #+#    #+#              #
-#    Updated: 2022/11/10 14:03:59 by marvin           ###   ########.fr        #
+#    Updated: 2022/11/10 18:43:31 by marvin           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,7 +33,7 @@ CFLAGS = -Wall -Wextra -Werror -g3 -O0
 RM = rm -f
 
 ${NAME} : ${OBJS}
-			${CC} -o ${NAME} ${OBJS}
+			${CC} ${CFLAGS} -o ${NAME} ${OBJS}
 
 clean:	
 		${RM} ${OBJS}

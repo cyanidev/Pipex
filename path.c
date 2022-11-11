@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/27 17:55:22 by afelicia          #+#    #+#             */
-/*   Updated: 2022/11/09 22:18:24 by marvin           ###   ########.fr       */
+/*   Updated: 2022/11/11 00:47:24 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,7 @@ static void	cmd_cpy(char *cmd, char *cmd_trim)
 		j++;
 		i++;
 	}
+	cmd_trim[j] = '\0';
 }
 
 static char	*testing(char **paths, char *cmd)
@@ -64,7 +65,7 @@ static char	*testing(char **paths, char *cmd)
 		test = ft_strjoin(paths[i++], cmd_trim);
 		if (test == NULL)
 			ret_error("program ran out of memory");
-		if (access(test, F_OK | X_OK) == 0)
+		else if (access(test, F_OK | X_OK) == 0)
 		{
 			free(cmd_trim);
 			return (test);

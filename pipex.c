@@ -51,7 +51,7 @@ char	*pipex(char *cmd, char **envp)
 	}
 	if (envp[i] == NULL)
 	{
-		printf("no path in env");
+		ret_error("no path in env");
 		return (0);
 	}
 	return (pathfinder(test, paths, path_envp, cmd));

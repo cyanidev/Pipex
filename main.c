@@ -87,6 +87,6 @@ int	main(int argc, char **argv, char **envp)
 		else if (pid > 0)
 			closefd(fd);
 	}
-	waitpid(pid, status, 0);
+	waitpid(pid, &status, 0);
 	return (WEXITSTATUS(status));
 }
